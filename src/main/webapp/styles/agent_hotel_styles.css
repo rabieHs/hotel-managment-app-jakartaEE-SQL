@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 40px 0 20px;
+}
+
+.filter-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-form label {
+    color: rgba(255, 255, 255, 0.9);
+    margin-right: 10px;
+}
+
+.filter-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    margin-right: 15px;
+}
+
+.filter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.filter-form input[type="submit"] {
+    background: #fff;
+    color: #2575fc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-form input[type="submit"]:hover {
+    background: #2575fc;
+    color: #fff;
+}
+
+.hotels-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.hotels-table thead {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hotels-table th, .hotels-table td {
+    padding: 15px;
+    text-align: left;
+    color: #fff;
+}
+
+.hotels-table tr {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.hotels-table img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-buttons form {
+    margin: 0;
+}
+
+.action-buttons input[type="submit"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #2575fc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-buttons input[type="submit"]:hover {
+    background: #2575fc;
+    color: #fff;
+}
+
+.add-hotel-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.add-hotel-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.add-hotel-form input,
+.add-hotel-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.add-hotel-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.add-hotel-form input[type="submit"] {
+    background: #fff;
+    color: #2575fc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.add-hotel-form input[type="submit"]:hover {
+    background: #2575fc;
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-form input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .hotels-table {
+        display: block;
+        overflow-x: auto;
+    }
+}

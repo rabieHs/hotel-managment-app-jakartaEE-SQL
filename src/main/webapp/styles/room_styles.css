@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 40px 0 20px;
+}
+
+.rooms-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.rooms-table thead {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.rooms-table th, .rooms-table td {
+    padding: 15px;
+    text-align: left;
+    color: #fff;
+}
+
+.rooms-table tr {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.add-room-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.add-room-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.add-room-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.add-room-form input[type="submit"] {
+    background: #fff;
+    color: #2575fc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.add-room-form input[type="submit"]:hover {
+    background: #2575fc;
+    color: #fff;
+}
+
+.action-buttons form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.action-buttons input[type="submit"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #2575fc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-buttons input[type="submit"]:hover {
+    background: #2575fc;
+    color: #fff;
+}

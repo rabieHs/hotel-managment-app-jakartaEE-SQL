@@ -1,0 +1,229 @@
+:root {
+    --primary-color: #2575fc;
+    --secondary-color: #6a11cb;
+    --white: #fff;
+    --text-light: rgba(255, 255, 255, 0.9);
+    --background-blur: rgba(255, 255, 255, 0.1);
+    --shadow-light: rgba(0, 0, 0, 0.2);
+    --shadow-medium: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: var(--white);
+    text-shadow: 0 4px 6px var(--shadow-light);
+}
+
+/* Filter Section */
+.filter-section {
+    margin-bottom: 40px;
+}
+
+.filter-form {
+    background: var(--background-blur);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px var(--shadow-light);
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Input and Button Styles */
+.form-group input,
+.filter-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-group input {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    backdrop-filter: blur(10px);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.filter-btn {
+    background: var(--white);
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.filter-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px var(--shadow-medium);
+}
+
+/* Hotels List */
+.hotels-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.hotel-card {
+    background: var(--background-blur);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.hotel-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px var(--shadow-medium);
+}
+
+/* Hotel Image */
+.hotel-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.hotel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hotel-card:hover .hotel-image img {
+    transform: scale(1.1);
+}
+
+/* Hotel Header */
+.hotel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.hotel-header h3 {
+    margin: 0;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.hotel-stars {
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+
+/* Hotel Details */
+.hotel-details {
+    padding: 15px 20px;
+}
+
+.hotel-details p {
+    margin: 10px 0;
+    color: var(--text-light);
+}
+
+.hotel-description {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Action Button */
+.hotel-action {
+    margin-top: 15px;
+}
+
+.details-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--white);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.details-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* No Hotels Found */
+.no-hotels {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    background: var(--background-blur);
+    border-radius: 15px;
+}
+
+.no-hotels p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        min-width: 100%;
+    }
+}
