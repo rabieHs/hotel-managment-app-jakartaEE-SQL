@@ -1,9 +1,13 @@
 package dao;
 
+import Models.Account;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AuthDao {
 	public static  int SignUp(String username,String password,String phone) {
@@ -45,6 +49,44 @@ public class AuthDao {
 
 	}
 
+	public static List<Account> getAccounts(){
 
+		List<Account> accounts = new ArrayList<>();
+		try(Connection con = DataBaseConnection.getConnection()){
+			String query = "Select * From accounts";
+			PreparedStatement statement = con.prepareStatement(query);
+			ResultSet resultSet = statement.executeQuery();
+
+			while(resultSet.next()){
+				Account account = new Account(
+
+						resultSet.getString("username"),
+						resultSet.getString("password"),
+						resultSet.getString("role"),
+						resultSet.getString("email")
+				);
+				account.id=resultSet.getInt("id");
+				accounts.add(account);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return accounts;
+	}
+
+	public static String deleteAccount(String id){
+		try (Connection conn = DataBaseConnection.getConnection()) {
+			String sql = "DELETE FROM accounts WHERE id = ?";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, id);
+			statement.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "-1";
+
+		}
+		return "1";
+	}
 
 }
