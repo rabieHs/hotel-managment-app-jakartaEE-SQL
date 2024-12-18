@@ -89,4 +89,21 @@ public class AuthDao {
 		return "1";
 	}
 
+	public  static String createAccount(String username,String password,String email,String role){
+		try (Connection conn = DataBaseConnection.getConnection()) {
+			String sql = "INSERT INTO accounts (username, password, role, email) VALUES (?, ?, ?, ?)";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, username);
+			statement.setString(2, password);
+			statement.setString(3, role);
+			statement.setString(4, email);
+			statement.executeUpdate();
+			return  "1";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "-1";
+
+		}
+	}
+
 }

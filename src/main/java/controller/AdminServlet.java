@@ -29,4 +29,27 @@ public class AdminServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("admin.jsp");
         dispatcher.forward(request, response);
     }
+
+
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String role = request.getParameter("role");
+        String email = request.getParameter("email");
+
+        authDao.createAccount(username,password,email,role);
+
+        // Redirection vers la page admin après l'ajout
+        response.sendRedirect("AdminServlet");
+    }
+
+ /*   @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doDelete(req, resp);
+        String agentId = req.getParameter("id");
+        String result = authDao.deleteAccount(agentId);
+        resp.sendRedirect("AdminServlet");
+    }*/
 }

@@ -45,7 +45,7 @@
     </table>
 
     <h2>Créer un Nouvel Agent</h2>
-    <form action="CreateAgentServlet" method="post">
+    <form action="AdminServlet" method="post">
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required>
 

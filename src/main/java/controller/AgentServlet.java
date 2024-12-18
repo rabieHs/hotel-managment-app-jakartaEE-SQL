@@ -1,6 +1,8 @@
 package controller;
 
+import Models.Reservation;
 import dao.HotelDAO;
+import dao.ReservationDAO;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.*;
@@ -19,10 +21,12 @@ import Models.Hotel;
 )
 public class AgentServlet extends HttpServlet {
     private HotelDAO hotelDAO;
+    private ReservationDAO reservationDAO;
 
     @Override
     public void init() throws ServletException {
         hotelDAO = new HotelDAO();
+        reservationDAO = new ReservationDAO();
     }
 
     @Override
@@ -34,6 +38,9 @@ public class AgentServlet extends HttpServlet {
         try {
             List<Hotel> hotels = hotelDAO.getHotels(filterName, filterCity, filterStars);
             request.setAttribute("hotel", hotels);
+            List<Reservation> reservations  = reservationDAO.getAllReservations();
+            request.setAttribute("reservations", reservations);
+
         } catch (SQLException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Database error: " + e.getMessage());

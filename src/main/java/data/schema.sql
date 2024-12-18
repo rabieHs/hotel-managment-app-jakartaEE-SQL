@@ -30,3 +30,17 @@ CREATE TABLE rooms (
                        price DECIMAL(10, 2) NOT NULL,
                        FOREIGN KEY (hotelId) REFERENCES hotels(id) ON DELETE CASCADE
 );
+
+CREATE TABLE reservations (
+                              id INT AUTO_INCREMENT PRIMARY KEY,
+                              room_id INT NOT NULL,
+                              hotel_id INT NOT NULL,
+                              user_name VARCHAR(100) NOT NULL,
+                              user_phone VARCHAR(20) NOT NULL,
+                              start_date DATE NOT NULL,
+                              end_date DATE NOT NULL,
+                              total_price DECIMAL(10, 2) NOT NULL,
+                              FOREIGN KEY (room_id) REFERENCES rooms(id),
+                              FOREIGN KEY (hotel_id) REFERENCES hotels(id)
+);
+

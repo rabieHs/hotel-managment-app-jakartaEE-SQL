@@ -7,22 +7,22 @@ import java.util.List;
 
 public class RoomDAO {
 
-
-    // Get hotel name by hotel ID
-    public String getHotelName(int hotelId) throws SQLException {
+    public double getRoomPrice(int roomId) throws SQLException {
         try (Connection conn = DataBaseConnection.getConnection()) {
-            String hotelQuery = "SELECT name FROM hotels WHERE id = ?";
-            try (PreparedStatement hotelStatement = conn.prepareStatement(hotelQuery)) {
-                hotelStatement.setInt(1, hotelId);
-                try (ResultSet hotelResultSet = hotelStatement.executeQuery()) {
-                    if (hotelResultSet.next()) {
-                        return hotelResultSet.getString("name");
+            String sql = "SELECT price FROM rooms WHERE id = ?";
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.setInt(1, roomId);
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    if (rs.next()) {
+                        return rs.getDouble("price");
                     }
                 }
             }
         }
-        return null;
+        throw new SQLException("Room not found");
     }
+
+
 
     // Get rooms by hotel ID
     public List<Room> getRoomsByHotelId(int hotelId) throws SQLException {
@@ -61,7 +61,6 @@ public class RoomDAO {
         }
     }
 
-    // Delete a room
     public void deleteRoom(int roomId) throws SQLException {
         try (Connection conn = DataBaseConnection.getConnection()) {
             String sql = "DELETE FROM rooms WHERE id = ?";
@@ -70,5 +69,20 @@ public class RoomDAO {
                 statement.executeUpdate();
             }
         }
+    }
+
+    public String getHotelName(int hotelId) throws SQLException {
+        try (Connection conn = DataBaseConnection.getConnection()) {
+            String hotelQuery = "SELECT name FROM hotels WHERE id = ?";
+            try (PreparedStatement hotelStatement = conn.prepareStatement(hotelQuery)) {
+                hotelStatement.setInt(1, hotelId);
+                try (ResultSet hotelResultSet = hotelStatement.executeQuery()) {
+                    if (hotelResultSet.next()) {
+                        return hotelResultSet.getString("name");
+                    }
+                }
+            }
+        }
+        return null;
     }
 }

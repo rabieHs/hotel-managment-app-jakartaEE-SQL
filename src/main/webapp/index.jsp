@@ -14,17 +14,17 @@
 </header>
 <section class="features">
     <div class="feature-box">
-        <img src="https://via.placeholder.com/80" alt="Feature Icon">
+        <img src="https://www.mews.com/hs-fs/hubfs/what-is-a-hotel-key-card-nfc.webp?width=624&height=555&name=what-is-a-hotel-key-card-nfc.webp" alt="Feature Icon">
         <h3>Room Management</h3>
         <p>Easily manage room availability, pricing, and categories.</p>
     </div>
     <div class="feature-box">
-        <img src="https://via.placeholder.com/80" alt="Feature Icon">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdf4aeD0y2ouA28FgpgcBVutBHqBWPMLLmjg&s" alt="Feature Icon">
         <h3>Booking System</h3>
         <p>Handle bookings seamlessly with our user-friendly interface.</p>
     </div>
     <div class="feature-box">
-        <img src="https://via.placeholder.com/80" alt="Feature Icon">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9-DVU3n8wkeYz5sXSc5fVTuJWzu9bMsgVmw&s" alt="Feature Icon">
         <h3>Customer Insights</h3>
         <p>Access detailed analytics to understand guest preferences.</p>
     </div>

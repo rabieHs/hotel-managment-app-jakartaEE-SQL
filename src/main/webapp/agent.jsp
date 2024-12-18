@@ -71,6 +71,40 @@
         </tbody>
     </table>
 
+
+    <h1>Gestion des Reservations</h1>
+
+    <table class="hotels-table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>roomId</th>
+            <th>hotelId</th>
+            <th>userName</th>
+            <th>userPhone</th>
+            <th>startDate</th>
+            <th>endDate</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Using JSTL to loop through the list of hotels -->
+        <c:forEach var="reservation" items="${reservations}">
+            <tr>
+
+                <td>${reservation.id}</td>
+                <td>${reservation.roomId}</td>
+                <td>${reservation.hotelId}</td>
+                <td>${reservation.userName}</td>
+                <td>${reservation.userPhone}</td>
+                <td>${reservation.startDate}</td>
+                <td>${reservation.endDate}</td>
+
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+
     <!-- Formulaire pour Ajouter un Hôtel -->
     <h2>Ajouter un Hôtel</h2>
     <form action="AgentServlet" method="post" enctype="multipart/form-data" class="add-hotel-form">

@@ -32,14 +32,7 @@
         <url-pattern>/AdminServlet</url-pattern>
    </servlet-mapping>
    
-    <servlet>
-        <servlet-name>CreateAgentServlet</servlet-name>
-        <servlet-class>controller.CreateAgentServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CreateAgentServlet</servlet-name>
-        <url-pattern>/CreateAgentServlet</url-pattern>
-   </servlet-mapping>
+
    
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
@@ -98,6 +91,15 @@
     <servlet-name>RoomHotelServlet</servlet-name>
     <url-pattern>/RoomHotelServlet</url-pattern>
 </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReservationServlet</servlet-name>
+        <servlet-class>controller.ReservationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReservationServlet</servlet-name>
+        <url-pattern>/ReservationServlet</url-pattern>
+    </servlet-mapping>
 
 
     
